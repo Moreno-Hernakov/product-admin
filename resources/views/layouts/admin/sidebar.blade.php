@@ -41,6 +41,14 @@
                 </li>
               @endif
 
+              <li
+                  class="sidebar-item {{ request()->segment(2) == 'Products' ? 'active' : '' }}">
+                  <a href="{{ route('app.Products.index') }}" class='sidebar-link'>
+                      <i class="bi bi-box-fill"></i>
+                      <span>Product</span>
+                  </a>
+              </li>
+
               @if (check_authorized("005S"))
                 <li
                     class="sidebar-item {{ request()->segment(2) == 'settings' ? 'active' : '' }}">
