@@ -45,7 +45,7 @@ Route::middleware(["auth", "check_maintanance", "check_session_token"])->group(f
   Route::post("/app/users/get", [UserController::class, "get"])->name("app.users.get")->middleware("check_authorized:003U");
   Route::resource("/app/users", UserController::class, ["as" => "app"])->middleware("check_authorized:003U|004R");
   
-  Route::get("/app/products/get", [ProductController::class, "get"])->name("app.Products.get")->middleware("check_authorized:003U");
+  Route::post("/app/products/get", [ProductController::class, "get"])->name("app.Products.get")->middleware("check_authorized:003U");
   Route::resource("/app/Products", ProductController::class, ["as" => "app"])->middleware("check_authorized:003U");
 
   Route::resource("/app/roles", RoleController::class, ["as" => "app"])->middleware("check_authorized:004R");
